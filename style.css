@@ -35,21 +35,16 @@ body {
 }
 
 .info-cont{
-    padding: 1rem 2rem;
+    padding: 0.2rem 0;
     border-bottom: solid 0.2px #fff;
     width: 100%;
     display: flex;
     justify-content: center; 
 }
 
-h1 {
+.main-cont h1 {
     font-size: 6rem;
-}
-
-@keyframes name {
-    to {
-        stroke-dashoffset: 0;
-    }
+    margin: 3rem 0;
 }
 
 .links{
@@ -60,27 +55,92 @@ h1 {
     cursor: pointer;
 }
 
-.about,.projects,.contacts{
+.hero-page{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+}
+
+.hero-text{
+    margin: 0 0 0 4rem;
+    position: relative;
+    width: 100%;
+}
+
+.hero-text h1{
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero-text h1 p{
+    margin: 0;
+    position: relative;
+    opacity: 0;
+}
+
+.hero-text h2{
+    font-size: 1rem;
+    margin: 0;
+    color: #777777;
+    font-weight: lighter;
+    position: relative;
+    opacity:0;
+}
+
+.circle{
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.circle img {
+    border-radius: 50%;
+    display: block;
+    border:1px solid #000;
+}
+.circle:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 90%,rgb(0, 0, 0) 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.home,.about,.projects,.contacts{
     margin: 0 2rem 0 2rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.about:hover,.projects:hover,.contacts:hover{
+    background-color: #1d1d1d;
 }
 
 .display-none{
     display: none;
 }
 
-.display-block{
-    display: block;
+.display-flex{
+    display: flex;
 }
 
 
 .about-page{
-    display: flex;
     flex-direction: column;
     width: 56%;
 }
 
 .about-page h2, .projects-page h2, .contact-page h2{
     font-size: 4rem;
+    position: relative;
+    top: 40px;
+    opacity:0;
+    animation: slideUp ease .5s forwards;
+    transform: translateY(-40px);
 }
 
 .about-page, .projects-page, .contact-page{
@@ -105,11 +165,38 @@ h1 {
 .card{
     color: #fff;
     border: #fff solid 1px;
-    height: 10rem;
-    width: 20rem;
+    height: 12rem;
+    width: 24rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: #1d1d1d;
+}
+
+.hero-text h1{
+    animation: fadeIn 2s ease;
+}
+
+.hero-text h2 {
+    top:40px;
+    left:10px;
+    animation: slideUp ease .5s forwards 1.2s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+  
+  
+@keyframes slideUp {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-40px);opacity:1;}
 }
 
 footer{
@@ -125,7 +212,7 @@ footer{
 }
 
 @media screen and (max-width: 800px) {
-    h1{
+    .main-cont h1{
       font-size: 1.7rem; /* The width is 100%, when the viewport is 800px or smaller */
     }
 

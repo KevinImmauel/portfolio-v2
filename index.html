@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/197e062082.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,39 +22,94 @@
     </div>
     <div class="info-cont">
         <div class="links">
+            <div class="home" id="hb" onclick="hpchange()">HOME</div>
             <div class="about" id="ab" onclick="apchange()">ABOUT</div>
             <div class="projects" id="pb" onclick="ppchange()">PROJECTS</div>
             <div class="contacts" id="cb" onclick="cpchange()">CONTACT</div>
         </div>
     </div>
 
-    <div class="about-page display-block" id="ap">
-        <h2>ABOUT ME</h2>
+    <div class="hero-page" id="hp">
+        <div class="circle">
+            <img src="img/pfp.png" alt="pfp">
+        </div>
+        <div class="hero-text">
+            <h1>Hi, I am <font color="#777">Kevin</font></h1>
+            <h2>A 17-year-old computer science enthusiast</h2>
+        </div>
+    </div>
+
+    <div class="about-page display-none" id="ap">
+        <h2>MORE ABOUT MYSELF</h2>
         <p>I'm a 17-year-old computer enthusiast learning about web development
-            and design. I enjoy coding and playing multiplayer games all day.</p>
+            and design. I love everything about computers and software.</p>
+        <p>BLAH BLAH BLAH MORE STUFF TO WRITE IN  THISS SECTION</p>
     </div>
 
     <div class="projects-page display-none" id="pp">
-        <h2>PROJECTS</h2>
+        <h2>STUFF I'VE BEEN DOING</h2>
         <div class="cards">
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/WeatherFlaskApp')">
+                <p>Weather Forecast</p>
+                <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-python"></i>
+                </div>
+            </div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/calculator.github.io')">
+                <p>Calculator</p>
+                <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+            </div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/password--generator')">
+                <p>Password Generator</p>
+                <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+            </div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/portfolio')">
+                <p>Portfolio</p>
+                <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+            </div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/Covid-19-Stats')">
+                <p>Covid-19 Statistics</p>
+                <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-node-js"></i>
+                </div>
+            </div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel/LMS-CSIP')">
+                <p>Library Management System</p>
+                <div class="icons">
+                    <i class="fa-brands fa-python"></i>
+                    <i class="fa-solid fa-database"></i>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="contact-page display-none" id="cp">
-        <h2>CONTACTS</h2>
+        <h2>LET'S TALK</h2>
         <div class="cards">
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
-            <div class="card">NICE</div>
+            <div class="card" onclick="openWin('email.html')"><i class="fa-solid fa-envelope fa-2xl"></i></div>
+            <div class="card" onclick="openWin('discord.html')"><i class="fa-brands fa-discord fa-2xl"></i></div>
+            <div class="card" onclick="openWin('https://www.instagram.com/kkkevinvcx/')"><i class="fa-brands fa-instagram fa-2xl"></i></div>
+            <div class="card" onclick="openWin('https://github.com/KevinImmauel')"><i class="fa-brands fa-github fa-2xl"></i></div>
+            <div class="card" onclick="openWin()"><i class="fa-brands fa-linkedin fa-2xl"></i></div>
+            <div class="card" onclick="openWin('https://www.youtube.com/watch?v=RtK-gJ8y44I')">SUS?</div>
         </div>
     </div>
     <footer>@Kevin Immanuel</footer>
