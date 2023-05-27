@@ -5,7 +5,6 @@ html {
 
 body {
     margin: 0 0 4rem;
-    /* bottom = footer height */
 }
 
 body {
@@ -19,7 +18,6 @@ body {
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    overflow: hidden;
     transition: display ease-in 0.5s;
 }
 
@@ -174,7 +172,6 @@ body {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
-    overflow: hidden;
 }
 
 .card {
@@ -279,22 +276,24 @@ footer {
 
     #ab,
     #pb,
-    #cb {
+    #cb,
+    #hb {
         margin: 0 1rem;
         font-size: 0.7rem;
     }
 
     #ap,
-    #pp#cp {
-        margin: 4rem 0;
+    #pp,#cp {
+        margin: 0;
         width: 100%;
     }
 
     #ap h2,
     #pp h2,
     #cp h2 {
-        font-size: 1.7rem;
+        font-size: 1rem;
         margin: 1rem 0;
+
     }
 
     #ap p {
@@ -303,7 +302,23 @@ footer {
     }
 
     .cards {
-        display: flex;
-        flex-direction: column;
+        display: block;
+    }
+
+    .card{
+        transform: scale(0.6);
+    }
+
+    .hero-page{
+        margin: 0;
+        display: block;
+    }
+
+    .hero-text h2{
+        font-size: 0.8rem;
+    }
+
+    img {
+        transform: scale(0.6);
     }
 }

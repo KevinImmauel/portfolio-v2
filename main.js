@@ -12,7 +12,7 @@ const cards = document.getElementsByClassName('card')
 
 function hpchange(){
     aboutPage.style.display = "none"
-    heroPage.style.display = "flex"
+    heroPage.style.display = "block"
     aboutButton.style.backgroundColor = "#000"
     projectsPage.style.display = "none"
     projectButton.style.backgroundColor = "#000"
@@ -66,3 +66,13 @@ function cardsTran(n,m){
 
 cardsTran(0,6)
 cardsTran(6,12)
+
+var x = window.matchMedia("(max-width: 800px)")
+
+function heroRespo(x) {
+    if (x.matches) { // If media query matches
+      document.body.style.backgroundColor = "yellow";
+    } else {
+      document.body.style.backgroundColor = "pink";
+    }
+  }
