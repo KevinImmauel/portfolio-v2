@@ -8,6 +8,8 @@ const projectsPage = document.getElementById("pp")
 const contactsPage = document.getElementById("cp")
 const heroPage = document.getElementById("hp")
 
+const cards = document.getElementsByClassName('card')
+
 function hpchange(){
     aboutPage.style.display = "none"
     heroPage.style.display = "flex"
@@ -51,3 +53,16 @@ function cpchange(){
 function openWin(s) {
     window.open(s)
 }
+
+function cardsTran(n,m){
+    for (let i=n;i<m;i++){
+        if (i<6){
+            cards[i].style.animationDelay = String((i)*150) + 'ms'
+        }else {
+            cards[i].style.animationDelay = String((i-5)*150) + 'ms'
+        }
+    }
+}
+
+cardsTran(0,6)
+cardsTran(6,12)

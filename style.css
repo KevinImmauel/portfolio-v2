@@ -2,8 +2,10 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
-    margin: 0 0 4rem; /* bottom = footer height */
+    margin: 0 0 4rem;
+    /* bottom = footer height */
 }
 
 body {
@@ -22,7 +24,7 @@ body {
 }
 
 
-.main-cont{
+.main-cont {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,12 +36,12 @@ body {
     width: 100%;
 }
 
-.info-cont{
+.info-cont {
     padding: 0.2rem 0;
     border-bottom: solid 0.2px #fff;
     width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .main-cont h1 {
@@ -47,15 +49,15 @@ body {
     margin: 3rem 0;
 }
 
-.links{
+.links {
     display: flex;
 }
 
-.links:hover{
+.links:hover {
     cursor: pointer;
 }
 
-.hero-page{
+.hero-page {
     display: flex;
     text-align: left;
     justify-content: center;
@@ -63,33 +65,33 @@ body {
     height: 65%;
 }
 
-.hero-text{
+.hero-text {
     margin: 0 0 0 4rem;
     position: relative;
     width: 100%;
 }
 
-.hero-text h1{
+.hero-text h1 {
     font-size: 4rem;
     margin: 0;
 }
 
-.hero-text h1 p{
+.hero-text h1 p {
     margin: 0;
     position: relative;
     opacity: 0;
 }
 
-.hero-text h2{
+.hero-text h2 {
     font-size: 1rem;
     margin: 0;
     color: #777777;
     font-weight: lighter;
     position: relative;
-    opacity:0;
+    opacity: 0;
 }
 
-.circle{
+.circle {
     border-radius: 50%;
     display: inline-block;
     position: relative;
@@ -98,71 +100,84 @@ body {
 .circle img {
     border-radius: 50%;
     display: block;
-    border:1px solid #000;
+    border: 1px solid #000;
 }
+
 .circle:after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 90%,rgb(0, 0, 0) 100%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
     border-radius: 50%;
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
 }
 
-.home,.about,.projects,.contacts{
+.home,
+.about,
+.projects,
+.contacts {
     margin: 0 2rem 0 2rem;
     padding: 0.2rem 0.5rem;
 }
 
-.about:hover,.projects:hover,.contacts:hover{
+.about:hover,
+.projects:hover,
+.contacts:hover {
     background-color: #1d1d1d;
 }
 
-.display-none{
+.display-none {
     display: none;
 }
 
-.display-flex{
+.display-flex {
     display: flex;
 }
 
 
-.about-page{
+.about-page {
     flex-direction: column;
     width: 56%;
 }
 
-.about-page h2, .projects-page h2, .contact-page h2{
+.about-page h2,
+.projects-page h2,
+.contact-page h2 {
     font-size: 4rem;
-    position: relative;
-    top: 40px;
-    opacity:0;
-    animation: slideUp ease .5s forwards;
-    transform: translateY(-40px);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+
 }
 
-.about-page, .projects-page, .contact-page{
+.about-page,
+.projects-page,
+.contact-page {
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .about-page p {
+    position: relative;
+    top: 40px;
     font-size: 1.5rem;
     font-weight: lighter;
+    animation: slideUp ease .5s forwards;
 }
 
-.cards{
+.cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 32px;
     grid-row-gap: 32px;
+    overflow: hidden;
 }
 
-.card{
+.card {
     color: #fff;
     border: #fff solid 1px;
     height: 12rem;
@@ -171,35 +186,72 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in forwards;
+    opacity: 0;
 }
 
-.card:hover{
+.card:hover {
     cursor: pointer;
     background-color: #1d1d1d;
 }
 
-.hero-text h1{
+.hero-text h1 {
     animation: fadeIn 2s ease;
 }
 
 .hero-text h2 {
-    top:40px;
-    left:10px;
+    top: 40px;
+    left: 10px;
     animation: slideUp ease .5s forwards 1.2s;
 }
 
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-  
-  
-@keyframes slideUp {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-40px);opacity:1;}
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 
-footer{
+.card::before {
+    font: var(--fa-font-solid);
+    content: "\f35d";
+    position: absolute;
+    right: -1.5rem;
+    top: -1.5rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: all ease-in 0.15s;
+}
+
+.card:hover::before {
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+}
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -212,40 +264,46 @@ footer{
 }
 
 @media screen and (max-width: 800px) {
-    .main-cont h1{
-      font-size: 1.7rem; /* The width is 100%, when the viewport is 800px or smaller */
+    .main-cont h1 {
+        font-size: 1.7rem;
+        /* The width is 100%, when the viewport is 800px or smaller */
     }
 
-    .info-cont{
+    .info-cont {
         margin: 0;
     }
 
-    .links{
+    .links {
         margin: 0;
     }
-    
-    #ab,#pb,#cb{
+
+    #ab,
+    #pb,
+    #cb {
         margin: 0 1rem;
         font-size: 0.7rem;
     }
 
-    #ap,#pp#cp{
+    #ap,
+    #pp#cp {
         margin: 4rem 0;
         width: 100%;
     }
 
-    #ap h2,#pp h2, #cp h2{
+    #ap h2,
+    #pp h2,
+    #cp h2 {
         font-size: 1.7rem;
         margin: 1rem 0;
     }
 
-    #ap p{
+    #ap p {
         font-size: 1rem;
         margin: 1rem;
     }
 
-    .cards{
+    .cards {
         display: flex;
         flex-direction: column;
     }
-  }
+}
