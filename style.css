@@ -98,19 +98,6 @@ body {
 .circle img {
     border-radius: 50%;
     display: block;
-    border: 1px solid #000;
-}
-
-.circle:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .home,
